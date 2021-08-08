@@ -1,24 +1,3 @@
-<?php
-
-namespace Drupal\admin_toolbar\Render\Element;
-
-use Drupal\Core\Menu\MenuTreeParameters;
-use Drupal\Core\Security\TrustedCallbackInterface;
-
-/**
- * Class AdminToolbar.
- *
- * @package Drupal\admin_toolbar\Render\Element
- */
-class AdminToolbar implements TrustedCallbackInterface {
-
-  /**
-   * {@inheritdoc}
-   */
-  public static function trustedCallbacks() {
-    return ['preRenderTray'];
-  }
-
   /**
    * Renders the toolbar's administration tray.
    *
@@ -47,5 +26,3 @@ class AdminToolbar implements TrustedCallbackInterface {
     $build['administration_menu'] = $menu_tree->build($tree);
     return $build;
   }
-
-}
